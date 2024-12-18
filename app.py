@@ -22,7 +22,7 @@ app.secret_key='hfbfe78hjefk'
 
 @app.route('/')
 def homepage():
-    return render_template('welcome.html')
+    return render_template('index.html')
 
 #admin------------
 
