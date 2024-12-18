@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        div{
+            border: 3px solid black;
+            width: fit-content;
+            margin: 1rem;
+            padding: 50px;
+        }
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/train-with-yellow-color-locomotive-shape-freight-overlay-front_170984-22147.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div>
+        <form action="{{url_for('login')}}" method="POST">
+            <h1>Login</h1>
+            <p>{{loginfirst}}</p>
+            <input type="email" placeholder="Enter email" name="email"><br><br>
+            <input type="password" name="password" id="" placeholder="Enter Password"><br><br>
+            <a href="bookings.html"><button>Login</button></a>
+        </form><br><br>
+            <a href="useraccdetails.html"><button>Forget Account Details?</button></a><br><br>       
+        </div>
+        <a href="/"><button>Home</button></a>
+    </center>
+</body>
+</html>

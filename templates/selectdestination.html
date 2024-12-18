@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/train-with-yellow-color-locomotive-shape-freight-overlay-front_170984-22147.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: fit-content;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 20px;
+            box-shadow: 0px 3px 3px;
+        }
+         
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Select Destination</h1><br>
+        <p style="color:red">{{wrong}}</p>
+        <form action="{{url_for('selectdestination')}}" method="POST">
+            <input type="date" placeholder="On" name="date"><br><br>
+            <label for="frm">From</label>
+            <select name="frm" id="frm"> 
+                <option value="" selected disabled>Select an option</option>
+                <option value="1 Kacheguda">Kacheguda</option>
+                <option value="2 Secunderabad">Secunderabad</option>
+                <option value="3 Guntur">Guntur</option>
+                <option value="4 Vijayawada">Vijayawada</option>
+                <option value="5 Rajahmundry">Rajahmundry</option>
+                <option value="6 Duvvada">Duvvada</option>
+                <option value="7 Vishakapatnam">Vishakapatnam</option>
+            </select>
+            <br><br>
+            <label for="to">To</label>
+            <select name="to" id="to">
+                
+                <option value="" selected disabled>Select an option</option>
+                <option value="1 Kacheguda">Kacheguda</option>
+                <option value="2 Secunderabad">Secunderabad</option>
+                <option value="3 Guntur">Guntur</option>
+                <option value="4 Vijayawada">Vijayawada</option>
+                <option value="5 Rajahmundry">Rajahmundry</option>
+                <option value="6 Duvvada">Duvvada</option>
+                <option value="7 Vishakapatnam">Vishakapatnam</option>
+            </select><br><br>
+            <button>Submit</button><br><br>
+        </form>
+        <a href="/"><button>Back</button></a>&nbsp;&nbsp;
+       
+    </center>
+</body>
+</html>

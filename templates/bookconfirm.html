@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+            background-image: url("https://img.freepik.com/premium-photo/train-with-yellow-color-locomotive-shape-freight-overlay-front_170984-22147.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: fit-content;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 20px;
+            box-shadow: 0px 3px 3px;
+        }
+    </style>
+</head>
+<body>
+    <a href=" {{url_for('logout')}}"><button>logout</button></a>
+    <center>
+        <form action="{{url_for('pay',date=date,frm=frm,to=to,price=price)}}" method="POST">
+        <h1>Ticket Confirm</h1><br>
+        {{date}} <br><br>
+        <label for="">From-</label>
+        {{frm}}
+        <label for="">To-</label>
+        {{to}}
+        <br><br>
+        <input type="text"  name="name" placeholder="Enter your name" required>
+        <input type="number" name="age" placeholder="Enter your age" required><br><br>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="">Total Price</label>
+        <h3>{{price}}/-</h3>
+        <button>Confirm</button>
+    </form>
+    </center>
+</body>
+</html>

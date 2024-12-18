@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with Razorpay</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/train-with-yellow-color-locomotive-shape-freight-overlay-front_170984-22147.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+ 
+        }
+        .pay{
+            background-color: hsl(197, 26%, 50%);
+            text-align: center;         
+            top:100px;
+            margin:100px;
+            padding: 50px;
+            box-shadow: 1px 1px 5px rgb(59, 59, 59);
+
+        
+
+        }
+    </style>
+</head>
+<body style="background-color:hwb(167 58% 9%);display: flex;justify-content: center;align-items: center;">
+    <div class="pay">
+        <h2>Pay for ticket <br><br>price - ₹{{ price }} </h2><br><br>
+        <button id="rzp-button1">Pay Now</button>
+        <a href="{{url_for('selectdestination')}}"><button>cancel</button></a>
+        
+    </div>
+    
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "rzp_test_x3klII7JCQkyBJ", // Enter your Razorpay Key ID here
+            "amount": "{{ order.amount }}", // Amount in paise
+            "currency": "INR",
+            "name": "{{ name }}",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": "{{ order.id }}", // Pass the order ID from Razorpay
+            "handler": function (response){
+                // Redirect to success route with the payment details
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '/success';
+
+                form.innerHTML = `
+                    <input type="hidden" name="razorpay_payment_id" value="${response.razorpay_payment_id}">
+                    <input type="hidden" name="razorpay_order_id" value="${response.razorpay_order_id}">
+                    <input type="hidden" name="razorpay_signature" value="${response.razorpay_signature}">
+                    <input type="hidden" name="name" value="{{name}}">
+                    <input type="hidden" name="age" value="{{age}}">
+                    <input type="hidden" name="gender" value="{{gender}}">
+                    <input type="hidden" name="date" value="{{date}}">
+                    <input type="hidden" name="frm" value="{{frm}}">
+                    <input type="hidden" name="to" value="{{to}}">
+                    <input type="hidden" name="price" value="{{price}}">
+                `;
+                document.body.appendChild(form);
+                form.submit();
+            },
+            "prefill": {
+                "name": "Test User",
+                "email": "session.get('user')",
+                "contact": "9999999999"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/train-with-yellow-color-locomotive-shape-freight-overlay-front_170984-22147.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .tic{
+            position: static;
+            text-align: center;
+            display: flex;
+            justify-self: center;
+            background-color: aliceblue;
+            padding: 2px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirmed Tickets</h1><br><br>
+   
+    <h3> {{ticket}}</h3>
+    <div class="tic">
+    <table border="1px">
+        <tr>
+        <th>id</th>
+        <th>email</th>
+        <th>name</th>
+        <th>age</th>
+        <th>gender</th>
+        <th>from</th>
+        <th>to</th>
+        <th>date</th>
+        <th>price</th>
+       </tr>
+        {%for i in data%}          
+           <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            <td>{{i[5]}}</td>
+            <td>{{i[6]}}</td>
+            <td>{{i[7]}}</td>
+            <td>{{i[8]}}</td>
+           </tr>
+        {%endfor%}
+    </table>
+    
+    
+</div>
+<br><br>
+<a href="/"><button>Home</button></b></a>
+       
+</body>
+</html>

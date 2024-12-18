@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otp Verification</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/train-with-yellow-color-locomotive-shape-freight-overlay-front_170984-22147.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <form action="{{url_for('otp',otp=otp,email=email,dob=dob,password=password,lname=lname,fname=fname,mobile=mobile)}}" method="POST">
+        <p>{{wrong}}</p>
+        <h1>Otp Verification</h1>
+        <input type="text" placeholder="Enter Otp" name="uotp">
+        <button>Submit</button>
+    </form>
+    </center>
+</body>
+</html>

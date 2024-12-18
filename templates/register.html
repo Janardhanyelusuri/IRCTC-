@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/train-with-yellow-color-locomotive-shape-freight-overlay-front_170984-22147.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: fit-content;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 20px;
+            box-shadow: 0px 3px 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <form action="{{url_for('register')}}" method="POST">
+            <h1>Register</h1>
+            <label for="">First Name</label>
+            <input type="text" placeholder="First Name" name="fname" required> <br><br>
+            <label for="">Last Name</label>
+            <input type="text" placeholder="Last Name" name="lname" required><br><br>
+            <label for="">Date Of Birth:</label>&nbsp;
+            <input type="date" placeholder="Date Of Birth" name="dob" required><br><br>
+            <label for="">Email</label>
+            <input type="email" placeholder="Email" name="email" required><br><br>
+            <label for="">Mobile Number</label>
+            <input type="text" placeholder="Mobile Number" name="mobile" required><br><br>
+            <label for="">Password</label>
+            <input type="text" placeholder="Enter Password" name="password" required><br><br>
+            <label for="">Confirm Password</label>
+            <input type="text" placeholder="Re-Enter Password"><br><br>
+            <button>Submit</button>
+        </form>
+        </div><br>  
+        <!-- <div><a href="welcome.html"><button class="button-border">Home</button></a></div> -->
+
+
+
+        <div class="button"><a href="welcome.html"><button class="button-border">Home</button></a><span class="button-border"></span></div>
+
+    </center>
+</body>
+</html>
